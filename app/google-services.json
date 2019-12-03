@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "654806767099",
+    "firebase_url": "https://reultatelection.firebaseio.com",
+    "project_id": "reultatelection",
+    "storage_bucket": "reultatelection.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654806767099:android:aa4f9132a17d885a99275e",
+        "android_client_info": {
+          "package_name": "com.aziz_najwa_dsi32_g1.resultat_election"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "654806767099-mlplg7odscc4m65n2lb516b53v928n8v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aziz_najwa_dsi32_g1.resultat_election",
+            "certificate_hash": "5f77541a1c014f90ed0305bfe56d35dd34764d91"
+          }
+        },
+        {
+          "client_id": "654806767099-rodoele20re7d1aj3e61mi7sn47phsnu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUGntWJGl-zLZf0fJJqBqlnVk0p59nGHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "654806767099-rodoele20re7d1aj3e61mi7sn47phsnu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
