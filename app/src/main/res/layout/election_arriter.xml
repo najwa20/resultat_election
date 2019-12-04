@@ -60,13 +60,8 @@
                 android:id="@+id/id_res3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Arreter" />
-
-            <Button
-                android:id="@+id/id_mod3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Modifer" />
+                android:layout_marginTop="30dp"
+                android:text="Resultat" />
 
             <Button
                 android:id="@+id/id_sup3"
@@ -111,13 +106,8 @@
                 android:id="@+id/id_res2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Arreter" />
-
-            <Button
-                android:id="@+id/id_mod2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Modifer" />
+                 android:layout_marginTop="30dp"
+                android:text="Resultat" />
 
             <Button
                 android:id="@+id/id_sup2"
@@ -162,13 +152,8 @@
                 android:id="@+id/id_res1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Arrieter" />
-
-            <Button
-                android:id="@+id/id_mod1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Modifer" />
+                android:layout_marginTop="30dp"
+                android:text="Resultat" />
 
             <Button
                 android:id="@+id/id_sup"
