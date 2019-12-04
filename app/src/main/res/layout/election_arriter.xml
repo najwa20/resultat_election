@@ -159,7 +159,7 @@
                 android:id="@+id/id_sup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Supprimer" />
+                android:text="@string/supprimer" />
         </LinearLayout>
 
     </LinearLayout>
