@@ -42,7 +42,7 @@ public class login extends AppCompatActivity {
                     if (t1 == "admin") {
                         Toast.makeText(getApplicationContext(), "succesfuly login admin", Toast.LENGTH_LONG).show();
                     } else {
-                        Toast.makeText(getApplicationContext(), "succesfuly login user", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "succesfuly login", Toast.LENGTH_LONG).show();
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), "woring email or password", Toast.LENGTH_LONG).show();
