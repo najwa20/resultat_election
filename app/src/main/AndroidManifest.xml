@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".cree_compte"></activity>
+        <activity android:name=".list_choix"></activity>
+        <activity android:name=".liste_election"></activity>
         <activity android:name=".login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -27,7 +27,7 @@
             android:layout_width="15dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/nidaa_tounes_nouveau1" />
+            app:srcCompat="@drawable/election" />
 
         <TextView
             android:id="@+id/id_nom"

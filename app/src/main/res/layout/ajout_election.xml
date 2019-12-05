@@ -40,7 +40,7 @@
             android:layout_width="15dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/election_bal" />
+            app:srcCompat="@drawable/election" />
 
         <TextView
             android:id="@+id/id_election3"
@@ -91,7 +91,7 @@
             android:layout_width="15dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/election_tach" />
+            app:srcCompat="@drawable/election" />
 
         <TextView
             android:id="@+id/id_election2"
@@ -142,7 +142,7 @@
             android:layout_width="15dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/election_pr" />
+            app:srcCompat="@drawable/election" />
 
         <TextView
             android:id="@+id/id_election1"
