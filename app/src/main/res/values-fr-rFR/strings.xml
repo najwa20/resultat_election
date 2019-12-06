@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">resultat_election</string>
+    <string name="supprimer" translatable="false">Supprimer</string>
+    <string name="modification" translatable="false">Modifer</string>
+    <string name="arreter" translatable="false">Arretre</string>
+    <string name="conn" translatable="false">Se connecter</string>
+    <string name="enn" translatable="false">Enregistre votre mot de passe</string>
+    <string name="cin" translatable="false">CIN</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="creeconn" translatable="false">Crée Un Compte</string>
+    <string name="cree" translatable="false">Crée</string>
+    <string name="resultat" translatable="false">Resultat</string>
+    <string name="identifent" translatable="false">Identifent</string>
+    <string name="motdepasse" translatable="false">Mot de passe</string>
+    <string name="nom" translatable="false">Nom</string>
+    <string name="prenom" translatable="false">Prenom</string>
+    <string name="confirmer" translatable="false">Confirmer</string>
+    <string name="electionpres" translatable="false">Election prisedentel</string>
+    <string name="electiolég" translatable="false">Elections législatives</string>
+    <string name="electionmun" translatable="false">Election municipale</string>
+    <string name="image" translatable="false">Image </string>
+    <string name="nomchoix" translatable="false">Nom de choix </string>
+    <string name="temresultat" translatable="false">Merci de votre attendre a la fin de election</string>
+</resources>

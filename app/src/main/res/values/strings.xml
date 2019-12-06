@@ -1,3 +1,25 @@
 <resources>
-    <string name="app_name">resultat_election</string>
+    <string name="app_name">election Resulte</string>
+    <string name="supprimer" translatable="false">Delete</string>
+    <string name="modification" translatable="false">Update</string>
+    <string name="arreter" translatable="false">Stop</string>
+    <string name="conn" translatable="false">Sign in</string>
+    <string name="creeconn" translatable="false">Sign up</string>
+    <string name="cree" translatable="false">Create</string>
+    <string name="enn" translatable="false">Save your password</string>
+    <string name="resultat" translatable="false">Result</string>
+    <string name="cin" translatable="false">CIN</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="identifent" translatable="false">Login</string>
+    <string name="motdepasse" translatable="false">Password</string>
+    <string name="nom" translatable="false">LastName</string>
+    <string name="prenom" translatable="false">FirstName</string>
+    <string name="confirmer" translatable="false">Confirm</string>
+    <string name="electionpres" translatable="false">Election taken</string>
+    <string name="electiolég" translatable="false">Legislative elections</string>
+    <string name="electionmun" translatable="false">Municipal election</string>
+    <string name="image" translatable="false">Picture </string>
+    <string name="nomchoix" translatable="false">Name of choice</string>
+    <string name="temresultat" translatable="false">Thank you for waiting at the end of the election</string>
+
 </resources>

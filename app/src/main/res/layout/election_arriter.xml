@@ -37,18 +37,18 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="15dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/election" />
 
         <TextView
             android:id="@+id/id_election3"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="    Election municipale " />
+            android:text="@string/electionmun" />
 
         <LinearLayout
             android:layout_width="50dp"
@@ -61,13 +61,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="Resultat" />
+                android:text="@string/resultat" />
 
             <Button
                 android:id="@+id/id_sup3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Suppromer" />
+                android:text="@string/supprimer" />
         </LinearLayout>
     </LinearLayout>
 
@@ -83,18 +83,18 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="15dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/election" />
 
         <TextView
             android:id="@+id/id_election2"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="     Elections législatives " />
+            android:text="@string/electiolég" />
 
         <LinearLayout
             android:layout_width="50dp"
@@ -106,14 +106,14 @@
                 android:id="@+id/id_res2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                 android:layout_marginTop="30dp"
-                android:text="Resultat" />
+                android:layout_marginTop="30dp"
+                android:text="@string/resultat" />
 
             <Button
                 android:id="@+id/id_sup2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Supprimer" />
+                android:text="@string/supprimer" />
         </LinearLayout>
     </LinearLayout>
 
@@ -129,18 +129,18 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="15dp"
+            android:layout_width="80dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             app:srcCompat="@drawable/election" />
 
         <TextView
             android:id="@+id/id_election1"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="     Election presidentielle" />
+            android:text="@string/electionpres" />
 
         <LinearLayout
             android:layout_width="50dp"
@@ -153,13 +153,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="Resultat" />
+                android:text="@string/resultat" />
 
             <Button
                 android:id="@+id/id_sup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="supprimer" />
+                android:text="@string/supprimer" />
         </LinearLayout>
 
     </LinearLayout>

@@ -36,6 +36,6 @@ tools:context=".list_choix">
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
-        android:text="Confirmer" />
+        android:text="@string/confirmer" />
 
 </RelativeLayout>

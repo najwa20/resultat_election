@@ -37,18 +37,18 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="15dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/election" />
 
         <TextView
             android:id="@+id/id_election3"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="    Election municipale " />
+            android:text="electionmun" />
 
         <LinearLayout
             android:layout_width="50dp"
@@ -60,19 +60,19 @@
                 android:id="@+id/id_res3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Arreter" />
+                android:text="@string/arreter" />
 
             <Button
                 android:id="@+id/id_mod3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Modifer" />
+                android:text="@string/modification" />
 
             <Button
                 android:id="@+id/id_sup3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Suppromer" />
+                android:text="@string/supprimer" />
         </LinearLayout>
     </LinearLayout>
 
@@ -88,18 +88,18 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="15dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/election" />
 
         <TextView
             android:id="@+id/id_election2"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="     Elections législatives " />
+            android:text="electiolég" />
 
         <LinearLayout
             android:layout_width="50dp"
@@ -111,19 +111,19 @@
                 android:id="@+id/id_res2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Arreter" />
+                android:text="@string/arreter" />
 
             <Button
                 android:id="@+id/id_mod2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Modifer" />
+                android:text="@string/modification" />
 
             <Button
                 android:id="@+id/id_sup2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Supprimer" />
+                android:text="@string/supprimer" />
         </LinearLayout>
     </LinearLayout>
 
@@ -139,18 +139,18 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="15dp"
+            android:layout_width="70dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             app:srcCompat="@drawable/election" />
 
         <TextView
             android:id="@+id/id_election1"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="     Election presidentielle" />
+            android:text="@string/electionpres" />
 
         <LinearLayout
             android:layout_width="50dp"
@@ -162,19 +162,19 @@
                 android:id="@+id/id_res1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Arrieter" />
+                android:text="@string/arreter" />
 
             <Button
                 android:id="@+id/id_mod1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Modifer" />
+                android:text="@string/modification" />
 
             <Button
                 android:id="@+id/id_sup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Supprimer" />
+                android:text="@string/supprimer" />
         </LinearLayout>
 
     </LinearLayout>
