@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/election" />
 
         <ListView
-            android:id="@+id/list_election"
+            android:id="@+id/list1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/imageView2"></ListView>

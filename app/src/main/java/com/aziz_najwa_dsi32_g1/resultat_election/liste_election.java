@@ -19,9 +19,9 @@ public class liste_election extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.choisi_election);
+        setContentView(R.layout.list_election);
 
-        list=findViewById(R.id.list_election);
+        list=findViewById(R.id.list1);
         final ArrayList<HashMap<String,String>> listitems =new ArrayList<>();
         HashMap<String,String> map =new HashMap<>();
         map.put("titre","Election municipale");

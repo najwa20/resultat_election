@@ -4,12 +4,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/election"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/election"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".cree_compte"></activity>
+        <activity android:name=".list_choix_admin"></activity>
+        <activity android:name=".liste_election_admin"></activity>
         <activity android:name=".list_choix"></activity>
         <activity android:name=".liste_election"></activity>
         <activity android:name=".login">

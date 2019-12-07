@@ -5,6 +5,7 @@
     <string name="arreter" translatable="false">Arretre</string>
     <string name="conn" translatable="false">Se connecter</string>
     <string name="enn" translatable="false">Enregistre votre mot de passe</string>
+    <string name="ajout" translatable="false">Ajout</string>
     <string name="cin" translatable="false">CIN</string>
     <string name="email" translatable="false">Email</string>
     <string name="creeconn" translatable="false">Crée Un Compte</string>

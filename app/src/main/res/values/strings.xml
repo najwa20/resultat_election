@@ -2,6 +2,7 @@
     <string name="app_name">election Resulte</string>
     <string name="supprimer" translatable="false">Delete</string>
     <string name="modification" translatable="false">Update</string>
+    <string name="ajout" translatable="false">Add</string>
     <string name="arreter" translatable="false">Stop</string>
     <string name="conn" translatable="false">Sign in</string>
     <string name="creeconn" translatable="false">Sign up</string>

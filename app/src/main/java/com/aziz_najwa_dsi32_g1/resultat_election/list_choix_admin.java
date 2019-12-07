@@ -12,7 +12,7 @@ import java.util.HashMap;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class list_choix  extends AppCompatActivity {
+public class list_choix_admin extends AppCompatActivity {
 
     ListView list;
 
@@ -40,7 +40,7 @@ public class list_choix  extends AppCompatActivity {
 
         final SimpleAdapter adapter = new SimpleAdapter(this.getBaseContext(),
                 listitems,
-                R.layout.exemple_choix,
+                R.layout.exemple_choix_admin,
                 new String[]{"img","titre"},
                 new int[]{R.id.imageView5,R.id.id_nom}
         );
@@ -50,7 +50,7 @@ public class list_choix  extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 HashMap<String,String> map = (HashMap<String,String>) list.getItemAtPosition(position);
-                Toast.makeText(list_choix.this, map.get("titre"), Toast.LENGTH_SHORT).show();
+                Toast.makeText(list_choix_admin.this, map.get("titre"), Toast.LENGTH_SHORT).show();
             }
         });
     }

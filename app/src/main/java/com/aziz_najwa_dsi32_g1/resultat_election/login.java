@@ -25,7 +25,7 @@ public class login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.creation_compt);
+        setContentView(R.layout.layout_login);
         db = new datahelper(this);
         login = findViewById(R.id.login);
         pwd = findViewById(R.id.user_password);
@@ -60,8 +60,9 @@ public class login extends AppCompatActivity {
                 }
                 editor.commit();
                 if (db.chekpass(t1, t2)) {
-                    if (t1 == "admin") {
-                        Toast.makeText(getApplicationContext(), "succesfuly login admin", Toast.LENGTH_LONG).show();
+                    if (t1.equals("admin")) {
+                        Intent i1 = new Intent(getApplicationContext(), liste_election_admin.class);
+                        startActivity(i1);
                     } else {
                         Intent i = new Intent(getApplicationContext(), liste_election.class);
                         startActivity(i);

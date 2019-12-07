@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".list_choix">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".liste_election_admin">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -17,17 +17,16 @@ tools:context=".list_choix">
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/election" />
 
-
     <ListView
-        android:id="@+id/list_choix"
+        android:id="@+id/list3"
         android:layout_width="match_parent"
-        android:layout_height="502dp"
-        android:layout_above="@+id/btn2"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_aj_elec"
         android:layout_below="@id/imageView2"
-        android:layout_marginBottom="-12dp"></ListView>
+        android:layout_marginBottom="4dp"></ListView>
 
     <Button
-        android:id="@+id/btn2"
+        android:id="@+id/btn_aj_elec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -36,6 +35,7 @@ tools:context=".list_choix">
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
-        android:text="@string/confirmer" />
+        android:text="@string/ajout" />
+
 
 </RelativeLayout>
