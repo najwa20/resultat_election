@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".liste_election_admin">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,14 +16,14 @@
         tools:layout_editor_absoluteX="1dp">
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/image_ex_el_ad"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/election" />
 
         <TextView
-            android:id="@+id/id_election3"
+            android:id="@+id/txt_ex_el_ad"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -40,18 +40,21 @@
                 android:id="@+id/id_res3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="arrele"
                 android:text="@string/arreter" />
 
             <Button
                 android:id="@+id/id_mod3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="listchoix"
                 android:text="@string/modification" />
 
             <Button
                 android:id="@+id/id_sup3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="supele"
                 android:text="@string/supprimer" />
         </LinearLayout>
     </LinearLayout>

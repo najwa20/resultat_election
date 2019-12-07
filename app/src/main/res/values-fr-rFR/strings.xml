@@ -21,5 +21,6 @@
     <string name="electionmun" translatable="false">Election municipale</string>
     <string name="image" translatable="false">Image </string>
     <string name="nomchoix" translatable="false">Nom de choix </string>
+    <string name="nomelection" translatable="false">Nom de election</string>
     <string name="temresultat" translatable="false">Merci de votre attendre a la fin de election</string>
 </resources>

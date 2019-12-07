@@ -1,5 +1,6 @@
 package com.aziz_najwa_dsi32_g1.resultat_election;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class list_choix  extends AppCompatActivity {
 
     ListView list;
+    datahelper db;
+    Intent in;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,21 +25,10 @@ public class list_choix  extends AppCompatActivity {
         setContentView(R.layout.list_choix);
 
         list=findViewById(R.id.list1);
-        final ArrayList<HashMap<String,String>> listitems =new ArrayList<>();
-        HashMap<String,String> map =new HashMap<>();
-        map.put("titre","choix1");
-        map.put("img",String.valueOf(R.drawable.election));
-        listitems.add(map);
-
-        map =new HashMap<>();
-        map.put("titre","choix2");
-        map.put("img",String.valueOf(R.drawable.election));
-        listitems.add(map);
-
-        map =new HashMap<>();
-        map.put("titre","choix3");
-        map.put("img",String.valueOf(R.drawable.election));
-        listitems.add(map);listitems.add(map);listitems.add(map);
+        db = new datahelper(this);
+        in = getIntent();
+        String i=in.getStringExtra("id");
+        final ArrayList<HashMap<String,String>> listitems =db.getchoix(i);
 
         final SimpleAdapter adapter = new SimpleAdapter(this.getBaseContext(),
                 listitems,

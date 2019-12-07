@@ -25,6 +25,7 @@ public class cree_compte extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cree_votre_compte);
+
         db = new datahelper(this);
         cin = findViewById(R.id.edittext);
         nom = findViewById(R.id.id_nom);
@@ -57,7 +58,7 @@ public class cree_compte extends AppCompatActivity {
                     Boolean chkelog = db.cheklog(t5);
                     if (chkemail) {
                         if (chkelog) {
-                            Boolean ins = db.insert(t1, t2, t3, t4, t5, t6);
+                            Boolean ins = db.insertuser(t1, t2, t3, t4, t5, t6);
                             Intent i = new Intent(getApplicationContext(), login.class);
                             startActivity(i);
                         } else {

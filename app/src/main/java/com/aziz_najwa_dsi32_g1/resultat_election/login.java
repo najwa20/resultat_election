@@ -49,26 +49,38 @@ public class login extends AppCompatActivity {
             public void onClick(View view) {
                 String t1 = login.getText().toString();
                 String t2 = pwd.getText().toString();
-                if (c.isChecked()) {
-                    editor.putString("login", login.getText().toString());
-                    editor.putString("pwd", pwd.getText().toString());
-                    editor.putBoolean("c", true);
-                } else {
-                    editor.remove("login");
-                    editor.remove("pwd");
-                    editor.remove("c");
-                }
-                editor.commit();
-                if (db.chekpass(t1, t2)) {
-                    if (t1.equals("admin")) {
-                        Intent i1 = new Intent(getApplicationContext(), liste_election_admin.class);
-                        startActivity(i1);
+                if(t1.equals("admin")&&t2.equals("admin"))
+                {
+                    Intent i1 = new Intent(getApplicationContext(), liste_election_admin.class);
+                    startActivity(i1);
+                    if (c.isChecked()) {
+                        editor.putString("login", login.getText().toString());
+                        editor.putString("pwd", pwd.getText().toString());
+                        editor.putBoolean("c", true);
                     } else {
+                        editor.remove("login");
+                        editor.remove("pwd");
+                        editor.remove("c");
+                    }
+                }
+                else {
+                    if (db.chekpass(t1, t2)) {
+                        if (c.isChecked()) {
+                            editor.putString("login", login.getText().toString());
+                            editor.putString("pwd", pwd.getText().toString());
+                            editor.putBoolean("c", true);
+                        } else {
+                            editor.remove("login");
+                            editor.remove("pwd");
+                            editor.remove("c");
+                        }
+                        editor.commit();
                         Intent i = new Intent(getApplicationContext(), liste_election.class);
                         startActivity(i);
                     }
-                } else {
-                    Toast.makeText(getApplicationContext(), "woring email or password", Toast.LENGTH_LONG).show();
+                    else {
+                        Toast.makeText(getApplicationContext(), "woring email or password", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });

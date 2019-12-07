@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class liste_election extends AppCompatActivity {
 
     ListView list;
+    datahelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,34 +23,23 @@ public class liste_election extends AppCompatActivity {
         setContentView(R.layout.list_election);
 
         list=findViewById(R.id.list1);
-        final ArrayList<HashMap<String,String>> listitems =new ArrayList<>();
-        HashMap<String,String> map =new HashMap<>();
-        map.put("titre","Election municipale");
-        map.put("img",String.valueOf(R.drawable.election));
-        listitems.add(map);
-
-        map =new HashMap<>();
-        map.put("titre","Elections législatives");
-        map.put("img",String.valueOf(R.drawable.election));
-        listitems.add(map);
-
-        map =new HashMap<>();
-        map.put("titre","Election presidentielle");
-        map.put("img",String.valueOf(R.drawable.election));
-        listitems.add(map);
+        db = new datahelper(this);
+        final ArrayList<HashMap<String,String>> listitems =db.getEle();
 
         final SimpleAdapter adapter = new SimpleAdapter(this.getBaseContext(),
                 listitems,
                 R.layout.exemple_election,
-                new String[]{"img","titre"},
-                new int[]{R.id.imageView4,R.id.id_election3}
+                new String[]{"img", "nom","id"},
+                new int[]{R.id.image_ex_el, R.id.txt_ex_el}
         );
         list.setAdapter(adapter);
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                HashMap<String,String> map = (HashMap<String,String>) list.getItemAtPosition(position);
                 Intent i = new Intent(getApplicationContext(), list_choix.class);
+                i.putExtra("id",map.get("id"));
                 startActivity(i);
             }
         });

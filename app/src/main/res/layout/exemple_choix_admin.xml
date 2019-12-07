@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".list_choix_admin">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -23,15 +23,15 @@
         tools:layout_editor_absoluteY="236dp">
 
         <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="15dp"
+            android:id="@+id/image_ex_choix_ad"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/election" />
 
         <TextView
-            android:id="@+id/id_nom"
-            android:layout_width="wrap_content"
+            android:id="@+id/txt_ex_choix_ad"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
@@ -43,6 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
+            android:onClick="supchoix"
             android:text="@string/supprimer" />
 
     </LinearLayout>
