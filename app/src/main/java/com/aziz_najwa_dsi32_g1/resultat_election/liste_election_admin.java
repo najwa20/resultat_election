@@ -16,7 +16,7 @@ import java.util.HashMap;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class liste_election_admin  extends AppCompatActivity {
+public class liste_election_admin extends AppCompatActivity {
 
     ListView list;
     Button btn;
@@ -49,23 +49,23 @@ public class liste_election_admin  extends AppCompatActivity {
     }
 
     public void listchoix(View view) {
-        int p= list.getPositionForView(view);
-        HashMap<String,String> map = (HashMap<String,String>) list.getItemAtPosition(p);
+        int p = list.getPositionForView(view);
+        HashMap<String, String> map = (HashMap<String, String>) list.getItemAtPosition(p);
         Intent i = new Intent(getApplicationContext(), list_choix_admin.class);
-        i.putExtra("id",map.get("id"));
+        i.putExtra("id", map.get("id"));
         startActivity(i);
     }
 
     public void supele(View view) {
-        int p= list.getPositionForView(view);
-        HashMap<String,String> map = (HashMap<String,String>)list.getItemAtPosition(p);
+        int p = list.getPositionForView(view);
+        HashMap<String, String> map = (HashMap<String, String>) list.getItemAtPosition(p);
         db.deletelect(map.get("id"));
         recreate();
     }
 
     public void arrele(View view) {
-        int p= list.getPositionForView(view);
-        HashMap<String,String> map = (HashMap<String,String>)list.getItemAtPosition(p);
+        int p = list.getPositionForView(view);
+        HashMap<String, String> map = (HashMap<String, String>) list.getItemAtPosition(p);
         db.arrelect(map.get("id"));
         recreate();
     }
