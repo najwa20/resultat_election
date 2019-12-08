@@ -105,7 +105,7 @@ public class liste_election_admin extends AppCompatActivity implements Navigatio
 
         switch (id){
             case R.id.accueil :
-                Intent intent1 = new Intent(this,liste_election.class);
+                Intent intent1 = new Intent(this,liste_election_admin.class);
                 this.startActivity(intent1);
                 break;
             case R.id.dec:
