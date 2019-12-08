@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".list_choix">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -27,23 +27,22 @@
             android:layout_width="15dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/election" />
+            app:srcCompat="@drawable/election"
+            android:contentDescription="@string/logo" />
 
         <TextView
             android:id="@+id/id_nom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:text="          Nidea Tunise" />
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/id_res"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:text="%" />
+            android:layout_weight="1" />
 
     </LinearLayout>
 

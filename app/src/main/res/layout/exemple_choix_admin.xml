@@ -27,7 +27,8 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/election" />
+            app:srcCompat="@drawable/election"
+            android:contentDescription="@string/logo" />
 
         <TextView
             android:id="@+id/txt_ex_choix_ad"
@@ -35,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="          Nidea Tunise" />
+            android:text="" />
 
         <Button
             android:id="@+id/id_sup4"

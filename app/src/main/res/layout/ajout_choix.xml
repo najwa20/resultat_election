@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ajouter_choix">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -15,7 +15,8 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/election" />
+        app:srcCompat="@drawable/election"
+        android:contentDescription="@string/logo" />
 
     <TextView
         android:id="@+id/Name"
@@ -28,7 +29,8 @@
         android:text="@string/image"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        tools:ignore="TextViewEdits" />
 
     <TextView
         android:id="@+id/editText5"
@@ -41,7 +43,8 @@
         android:text="@string/nomchoix"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Name" />
+        app:layout_constraintTop_toBottomOf="@+id/Name"
+        tools:ignore="TextViewEdits" />
 
     <Button
         android:id="@+id/id_cree_choix"
@@ -61,7 +64,8 @@
         android:src="@android:drawable/ic_menu_save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Name"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        android:contentDescription="@string/logo" />
 
     <EditText
         android:id="@+id/nom_choix"
@@ -72,6 +76,9 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText5"
-        app:layout_constraintTop_toBottomOf="@+id/img_choix" />
+        app:layout_constraintTop_toBottomOf="@+id/img_choix"
+        android:autofillHints=""
+        tools:targetApi="o"
+        tools:ignore="LabelFor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

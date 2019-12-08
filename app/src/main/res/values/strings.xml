@@ -23,5 +23,7 @@
     <string name="nomchoix" translatable="false">Name of choice</string>
     <string name="nomelection" translatable="false">Name of election</string>
     <string name="temresultat" translatable="false">Thank you for waiting at the end of the election</string>
+    <string name="logo">logo</string>
+    <string name="img">img</string>
 
 </resources>

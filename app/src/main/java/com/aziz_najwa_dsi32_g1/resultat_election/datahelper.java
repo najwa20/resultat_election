@@ -1,20 +1,21 @@
 package com.aziz_najwa_dsi32_g1.resultat_election;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class datahelper extends SQLiteOpenHelper {
-    public static final int DATABASE_VERSION = 8;
-    public static final String DATABASE_NAME = "election";
+    private static final int DATABASE_VERSION = 9;
+    private static final String DATABASE_NAME = "election";
 
-    public datahelper(Context context) {
+    datahelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -22,6 +23,7 @@ public class datahelper extends SQLiteOpenHelper {
         db.execSQL("create table user (cin text, nom text,prenom text,email text,login text primary key,password text)");
         db.execSQL("create table election (id integer Primary Key AUTOINCREMENT,nom text,terminer boolean)");
         db.execSQL("create table choix (id integer Primary Key AUTOINCREMENT,nom text,election integer,nb integer)");
+        db.execSQL("create table per (login text,election integer)");
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -30,10 +32,11 @@ public class datahelper extends SQLiteOpenHelper {
         db.execSQL("drop table if exists user");
         db.execSQL("drop table if exists election");
         db.execSQL("drop table if exists choix");
+        db.execSQL("drop table if exists per");
         onCreate(db);
     }
 
-    public boolean insertuser(String cin, String nom, String prenom, String email, String login, String password) {
+    void insertuser(String cin, String nom, String prenom, String email, String login, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("cin", cin);
@@ -42,71 +45,60 @@ public class datahelper extends SQLiteOpenHelper {
         contentValues.put("email", email);
         contentValues.put("login", login);
         contentValues.put("password", password);
-        long ins = db.insert("user", null, contentValues);
-        if (ins == -1)
-            return false;
-        else
-            return true;
+        db.insert("user", null, contentValues);
 
     }
 
-    public boolean insertelection(String nom) {
+    void insertelection(String nom) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("nom", nom);
         contentValues.put("terminer", false);
-        long ins = db.insert("election", null, contentValues);
-        if (ins == -1)
-            return false;
-        else
-            return true;
+        db.insert("election", null, contentValues);
 
     }
 
-    public boolean insertchoix(String nom,int election) {
+    void insertchoix(String nom, int election) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("nom", nom);
         contentValues.put("election", election);
         contentValues.put("nb", 0);
-        long ins = db.insert("choix", null, contentValues);
-        if (ins == -1)
-            return false;
-        else
-            return true;
+        db.insert("choix", null, contentValues);
 
     }
-
-    public boolean chekemail(String email) {
+    void insertnp(String login, int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from user where email=?", new String[]{email});
-        if (cursor.getCount() > 0)
-            return false;
-        else
-            return true;
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("login", login);
+        contentValues.put("election", id);
+        db.insert("per", null, contentValues);
     }
 
-    public boolean cheklog(String login) {
+    boolean chekemail(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from user where login=?", new String[]{login});
-        if (cursor.getCount() > 0)
-            return false;
-        else
-            return true;
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery("select * from user where email=?", new String[]{email});
+        return cursor.getCount() <= 0;
     }
 
-    public boolean chekpass(String login, String password) {
+    boolean cheklog(String login) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from user where login=? and password=?", new String[]{login, password});
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery("select * from user where login=?", new String[]{login});
+        return cursor.getCount() <= 0;
+    }
+
+    boolean chekpass(String login, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery("select * from user where login=? and password=?", new String[]{login, password});
         return cursor.getCount() > 0;
 
     }
 
-    public ArrayList<HashMap<String, String>> getEle() {
+    ArrayList<HashMap<String, String>> getEle() {
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<HashMap<String, String>> userList = new ArrayList<>();
         String query = "SELECT id,nom FROM election";
-        Cursor cursor = db.rawQuery(query,null);
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery(query,null);
         while (cursor.moveToNext()){
             HashMap<String,String> ele = new HashMap<>();
             ele.put("id",String.valueOf(cursor.getInt(cursor.getColumnIndex("id"))));
@@ -117,11 +109,11 @@ public class datahelper extends SQLiteOpenHelper {
         return  userList;
     }
 
-    public ArrayList<HashMap<String, String>> getchoix(String election) {
+    ArrayList<HashMap<String, String>> getchoix(String election) {
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<HashMap<String, String>> userList = new ArrayList<>();
         String query = "SELECT id,nom FROM choix where election="+election;
-        Cursor cursor = db.rawQuery(query,null);
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery(query,null);
         while (cursor.moveToNext()){
             HashMap<String,String> ele = new HashMap<>();
             ele.put("id",String.valueOf(cursor.getInt(cursor.getColumnIndex("id"))));
@@ -132,23 +124,61 @@ public class datahelper extends SQLiteOpenHelper {
         return  userList;
     }
 
-    public void deletelect(String id) {
+    void deletelect(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete("election", "id = ?",new String[]{id});
         db.close();
     }
 
-    public void arrelect(String id) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        cv.put("terminer",true);
-        db.update("election",cv,"_id="+id,null);
-        db.close();
+    void arrelect(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.execSQL("UPDATE election SET terminer ='true' WHERE id ="+id);
     }
 
-    public void deletchoix(String id) {
+    void deletchoix(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete("choix", "id = ?",new String[]{id});
         db.close();
+    }
+
+    public void send(String id, String id1,String login) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        insertnp(login,Integer.valueOf(id));
+
+        String query = "SELECT nb FROM choix where id="+id1;
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery(query,null);
+        int nbr=0;
+        while (cursor.moveToNext()){
+            nbr=cursor.getInt(cursor.getColumnIndex("nb"));
+        }
+        nbr=nbr+1;
+        db.execSQL("UPDATE choix SET nb ="+nbr+" WHERE id ="+id1);
+    }
+
+    public boolean testelec(String id,String login)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM per where login='"+login+"' and election="+id;
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery(query,null);
+        while (cursor.moveToNext()){
+                return true;
+        }
+         return false;
+    }
+
+    public boolean testter(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String test="false";
+        String query = "SELECT terminer FROM election where id="+id;
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery(query,null);
+        while (cursor.moveToNext()){
+            test=cursor.getString(cursor.getColumnIndex("terminer"));
+        }
+        if (test=="true")
+        {
+            return true;
+        }
+        else return false;
     }
 }

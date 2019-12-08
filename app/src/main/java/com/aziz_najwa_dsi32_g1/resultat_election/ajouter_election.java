@@ -16,7 +16,7 @@ public class ajouter_election extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ajout_election);
+        setContentView(R.layout.ajouter_elec);
         db = new datahelper(this);
         e1=findViewById(R.id.nom_elec);
         btn=findViewById(R.id.id_cree_ele);
@@ -30,7 +30,7 @@ public class ajouter_election extends AppCompatActivity {
                 }
                 else
                 {
-                    Boolean ins = db.insertelection(nom);
+                    db.insertelection(nom);
                     Intent i = new Intent(getApplicationContext(), liste_election_admin.class);
                     startActivity(i);
                 }

@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ajouter_choix extends AppCompatActivity {
@@ -23,7 +25,7 @@ public class ajouter_choix extends AppCompatActivity {
         e1=findViewById(R.id.nom_choix);
         btn=findViewById(R.id.id_cree_choix);
         in = getIntent();
-        final int id= Integer.parseInt(in.getStringExtra("id"));
+        final int id= Integer.parseInt(Objects.requireNonNull(in.getStringExtra("id")));
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,7 +36,7 @@ public class ajouter_choix extends AppCompatActivity {
                 }
                 else
                 {
-                    Boolean ins = db.insertchoix(nom,id);
+                    db.insertchoix(nom,id);
                     Intent i = new Intent(getApplicationContext(), list_choix_admin.class);
                     i.putExtra("id",String.valueOf(id));
                     startActivity(i);

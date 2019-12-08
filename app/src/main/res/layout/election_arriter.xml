@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".liste_election_admin">
 
     <Button
         android:id="@+id/btn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+"
+        android:text="@string/ajout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="674dp" />
+        tools:layout_editor_absoluteY="674dp"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -24,7 +25,8 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/election" />
+        app:srcCompat="@drawable/election"
+        android:contentDescription="@string/logo" />
 
     <LinearLayout
         android:layout_width="409dp"
@@ -40,7 +42,8 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/election" />
+            app:srcCompat="@drawable/election"
+            android:contentDescription="@string/logo" />
 
         <TextView
             android:id="@+id/id_election3"
@@ -86,7 +89,8 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/election" />
+            app:srcCompat="@drawable/election"
+            android:contentDescription="@string/logo" />
 
         <TextView
             android:id="@+id/id_election2"
@@ -132,7 +136,8 @@
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/election" />
+            app:srcCompat="@drawable/election"
+            android:contentDescription="@string/logo" />
 
         <TextView
             android:id="@+id/id_election1"

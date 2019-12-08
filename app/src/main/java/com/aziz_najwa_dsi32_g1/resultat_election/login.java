@@ -49,7 +49,7 @@ public class login extends AppCompatActivity {
             public void onClick(View view) {
                 String t1 = login.getText().toString();
                 String t2 = pwd.getText().toString();
-                if(t1.equals("admin")&&t2.equals("admin"))
+                if((t1.equals("admin"))&&(t2.equals("admin")))
                 {
                     Intent i1 = new Intent(getApplicationContext(), liste_election_admin.class);
                     startActivity(i1);
@@ -74,7 +74,7 @@ public class login extends AppCompatActivity {
                             editor.remove("pwd");
                             editor.remove("c");
                         }
-                        editor.commit();
+                        editor.apply();
                         Intent i = new Intent(getApplicationContext(), liste_election.class);
                         startActivity(i);
                     }

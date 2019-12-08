@@ -15,7 +15,8 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/election" />
+        app:srcCompat="@drawable/election"
+        android:contentDescription="@string/logo" />
 
     <ListView
         android:id="@+id/list3"
@@ -23,7 +24,7 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/btn_aj_elec"
         android:layout_below="@id/imageView2"
-        android:layout_marginBottom="4dp"></ListView>
+        android:layout_marginBottom="4dp" />
 
     <Button
         android:id="@+id/btn_aj_elec"

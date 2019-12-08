@@ -54,11 +54,11 @@ public class cree_compte extends AppCompatActivity {
                 if ((t1.equals("")) || (t2.equals("")) || (t3.equals("")) || (t4.equals("")) || (t5.equals("")) || (t6.equals(""))) {
                     Toast.makeText(getApplicationContext(), "Files are empty", Toast.LENGTH_LONG).show();
                 } else {
-                    Boolean chkemail = db.chekemail(t4);
-                    Boolean chkelog = db.cheklog(t5);
+                    boolean chkemail = db.chekemail(t4);
+                    boolean chkelog = db.cheklog(t5);
                     if (chkemail) {
                         if (chkelog) {
-                            Boolean ins = db.insertuser(t1, t2, t3, t4, t5, t6);
+                            db.insertuser(t1, t2, t3, t4, t5, t6);
                             Intent i = new Intent(getApplicationContext(), login.class);
                             startActivity(i);
                         } else {

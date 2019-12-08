@@ -23,25 +23,27 @@
         tools:layout_editor_absoluteY="236dp">
 
         <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="15dp"
+            android:id="@+id/image_ex_choix"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:contentDescription="@string/logo"
             app:srcCompat="@drawable/election" />
 
         <TextView
-            android:id="@+id/id_nom"
-            android:layout_width="wrap_content"
+            android:id="@+id/txt_ex_choix"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="          Nidea Tunise" />
+            android:text="" />
 
         <CheckBox
             android:id="@+id/checkBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:onClick="check"
             android:layout_weight="1" />
 
 
