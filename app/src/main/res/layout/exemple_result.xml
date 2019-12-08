@@ -23,22 +23,22 @@
         tools:layout_editor_absoluteY="236dp">
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/image_ex_res"
             android:layout_width="15dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/election"
-            android:contentDescription="@string/logo" />
+            android:contentDescription="@string/logo"
+            app:srcCompat="@drawable/election" />
 
         <TextView
-            android:id="@+id/id_nom"
+            android:id="@+id/txt_ex_res"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/id_res"
+            android:id="@+id/res_ex_res"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"

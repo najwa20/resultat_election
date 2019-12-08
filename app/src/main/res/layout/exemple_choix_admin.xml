@@ -27,8 +27,8 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/election"
-            android:contentDescription="@string/logo" />
+            android:contentDescription="@string/logo"
+            app:srcCompat="@drawable/election" />
 
         <TextView
             android:id="@+id/txt_ex_choix_ad"

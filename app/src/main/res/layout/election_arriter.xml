@@ -13,20 +13,20 @@
         android:text="@string/ajout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="674dp"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteY="674dp" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="226dp"
         android:layout_height="150dp"
         android:layout_marginTop="43dp"
+        android:contentDescription="@string/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/election"
-        android:contentDescription="@string/logo" />
+        app:srcCompat="@drawable/election" />
 
     <LinearLayout
         android:layout_width="409dp"
@@ -42,8 +42,8 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/election"
-            android:contentDescription="@string/logo" />
+            android:contentDescription="@string/logo"
+            app:srcCompat="@drawable/election" />
 
         <TextView
             android:id="@+id/id_election3"
@@ -89,8 +89,8 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/election"
-            android:contentDescription="@string/logo" />
+            android:contentDescription="@string/logo"
+            app:srcCompat="@drawable/election" />
 
         <TextView
             android:id="@+id/id_election2"
@@ -136,8 +136,8 @@
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/election"
-            android:contentDescription="@string/logo" />
+            android:contentDescription="@string/logo"
+            app:srcCompat="@drawable/election" />
 
         <TextView
             android:id="@+id/id_election1"

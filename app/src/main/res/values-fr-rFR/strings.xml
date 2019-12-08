@@ -25,4 +25,8 @@
     <string name="temresultat" translatable="false">Merci de votre attendre a la fin de election</string>
     <string name="logo">logo</string>
     <string name="img">img</string>
+    <string name="accueil">accueil</string>
+    <string name="deconnecter">deconnetion</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
 </resources>

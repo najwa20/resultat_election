@@ -12,6 +12,7 @@ import java.util.HashMap;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+@SuppressWarnings("ALL")
 public class list_choix_admin extends AppCompatActivity {
 
     ListView list;
@@ -23,11 +24,11 @@ public class list_choix_admin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_choix_admin);
-        list=findViewById(R.id.list1);
+        list = findViewById(R.id.list1);
         db = new datahelper(this);
         btn = findViewById(R.id.btn_aj_choix);
         in = getIntent();
-        final String id=in.getStringExtra("id");
+        final String id = in.getStringExtra("id");
         final ArrayList<HashMap<String, String>> listitems = db.getchoix(id);
 
         final SimpleAdapter adapter = new SimpleAdapter(this.getBaseContext(),
@@ -42,15 +43,15 @@ public class list_choix_admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i1 = new Intent(getApplicationContext(), ajouter_choix.class);
-                i1.putExtra("id",id);
+                i1.putExtra("id", id);
                 startActivity(i1);
             }
         });
     }
 
     public void supchoix(View view) {
-        int p= list.getPositionForView(view);
-        HashMap<String,String> map = (HashMap<String,String>)list.getItemAtPosition(p);
+        int p = list.getPositionForView(view);
+        HashMap<String, String> map = (HashMap<String, String>) list.getItemAtPosition(p);
         db.deletchoix(map.get("id"));
         recreate();
     }

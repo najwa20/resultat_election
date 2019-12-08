@@ -2,22 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/accueil"
             android:icon="@drawable/ic_desktop"
-            android:title="accueil" />
+            android:title="@string/accueil" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_insert_drive_file_black_24dp"
-            android:title="election1" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_insert_drive_file_black_24dp"
-            android:title="election2" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_insert_drive_file_black_24dp"
-            android:title="election3" />
+            android:id="@+id/dec"
+            android:icon="@drawable/ic_close_black_24dp"
+            android:title="@string/deconnecter" />
     </group>
-
-
 </menu>

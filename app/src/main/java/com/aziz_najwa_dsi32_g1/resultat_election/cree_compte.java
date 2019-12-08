@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+@SuppressWarnings("ALL")
 public class cree_compte extends AppCompatActivity {
     EditText cin;
     EditText nom;

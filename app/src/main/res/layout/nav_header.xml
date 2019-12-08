@@ -18,6 +18,7 @@
         app:srcCompat="@drawable/img" />
 
     <TextView
+        android:id="@+id/user_name_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="nom"

@@ -11,6 +11,7 @@ import java.util.Objects;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+@SuppressWarnings("ALL")
 public class ajouter_choix extends AppCompatActivity {
     EditText e1;
     Button btn;
@@ -22,23 +23,20 @@ public class ajouter_choix extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ajout_choix);
         db = new datahelper(this);
-        e1=findViewById(R.id.nom_choix);
-        btn=findViewById(R.id.id_cree_choix);
+        e1 = findViewById(R.id.nom_choix);
+        btn = findViewById(R.id.id_cree_choix);
         in = getIntent();
-        final int id= Integer.parseInt(Objects.requireNonNull(in.getStringExtra("id")));
+        final int id = Integer.parseInt(Objects.requireNonNull(in.getStringExtra("id")));
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nom=e1.getText().toString();
-                if(nom.equals(""))
-                {
+                String nom = e1.getText().toString();
+                if (nom.equals("")) {
                     Toast.makeText(getApplicationContext(), "Files are empty", Toast.LENGTH_LONG).show();
-                }
-                else
-                {
-                    db.insertchoix(nom,id);
+                } else {
+                    db.insertchoix(nom, id);
                     Intent i = new Intent(getApplicationContext(), list_choix_admin.class);
-                    i.putExtra("id",String.valueOf(id));
+                    i.putExtra("id", String.valueOf(id));
                     startActivity(i);
                 }
             }

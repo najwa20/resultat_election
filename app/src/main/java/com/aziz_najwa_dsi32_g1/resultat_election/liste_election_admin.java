@@ -13,6 +13,7 @@ import java.util.HashMap;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+@SuppressWarnings("ALL")
 public class liste_election_admin extends AppCompatActivity {
 
     ListView list;

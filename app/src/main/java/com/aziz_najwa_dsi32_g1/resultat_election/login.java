@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+@SuppressWarnings("ALL")
 public class login extends AppCompatActivity {
     EditText login;
     EditText pwd;
@@ -49,8 +50,7 @@ public class login extends AppCompatActivity {
             public void onClick(View view) {
                 String t1 = login.getText().toString();
                 String t2 = pwd.getText().toString();
-                if((t1.equals("admin"))&&(t2.equals("admin")))
-                {
+                if ((t1.equals("admin")) && (t2.equals("admin"))) {
                     Intent i1 = new Intent(getApplicationContext(), liste_election_admin.class);
                     startActivity(i1);
                     if (c.isChecked()) {
@@ -62,8 +62,7 @@ public class login extends AppCompatActivity {
                         editor.remove("pwd");
                         editor.remove("c");
                     }
-                }
-                else {
+                } else {
                     if (db.chekpass(t1, t2)) {
                         if (c.isChecked()) {
                             editor.putString("login", login.getText().toString());
@@ -77,8 +76,7 @@ public class login extends AppCompatActivity {
                         editor.apply();
                         Intent i = new Intent(getApplicationContext(), liste_election.class);
                         startActivity(i);
-                    }
-                    else {
+                    } else {
                         Toast.makeText(getApplicationContext(), "woring email or password", Toast.LENGTH_LONG).show();
                     }
                 }

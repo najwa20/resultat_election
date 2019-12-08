@@ -17,6 +17,7 @@
         <activity android:name=".list_choix_admin"/>
         <activity android:name=".liste_election_admin"/>
         <activity android:name=".fin_elec"/>
+        <activity android:name=".res_elec"/>
         <activity android:name=".list_choix"/>
         <activity android:name=".liste_election"/>
         <activity android:name=".login">
