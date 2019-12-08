@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
 
@@ -16,12 +17,13 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 @SuppressWarnings("ALL")
-public class liste_election extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class liste_election extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     ListView list;
     datahelper db;
@@ -60,20 +62,23 @@ public class liste_election extends AppCompatActivity implements NavigationView.
                 SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
                 SharedPreferences.Editor editor = pref.edit();
                 String login = pref.getString("login", null);
-                if (db.testelec(map.get("id"), login)) {
-                    Intent i = new Intent(getApplicationContext(), fin_elec.class);
-                    i.putExtra("id", map.get("id"));
-                    startActivity(i);
+                if (db.testter(Integer.valueOf(map.get("id"))).equals("1")) {
+                    Intent i1 = new Intent(getApplicationContext(), res_elec.class);
+                    i1.putExtra("id", map.get("id"));
+                    startActivity(i1);
                 } else {
-                    Intent i = new Intent(getApplicationContext(), list_choix.class);
-                    i.putExtra("id", map.get("id"));
-                    startActivity(i);
+                    if (db.testelec(map.get("id"), login)) {
+                        Intent i = new Intent(getApplicationContext(), fin_elec.class);
+                        startActivity(i);
+                    } else {
+                        Intent i = new Intent(getApplicationContext(), list_choix.class);
+                        i.putExtra("id", map.get("id"));
+                        startActivity(i);
+                    }
                 }
             }
         });
     }
-
-
 
 
     //Menu
@@ -94,9 +99,9 @@ public class liste_election extends AppCompatActivity implements NavigationView.
         // 4 - Handle Navigation Item Click
         int id = item.getItemId();
 
-        switch (id){
-            case R.id.accueil :
-                Intent intent1 = new Intent(this,liste_election.class);
+        switch (id) {
+            case R.id.accueil:
+                Intent intent1 = new Intent(this, liste_election.class);
                 this.startActivity(intent1);
                 break;
             case R.id.dec:
@@ -105,7 +110,8 @@ public class liste_election extends AppCompatActivity implements NavigationView.
                 editor.remove("login");
                 editor.remove("pwd");
                 editor.remove("c");
-                Intent intent2 = new Intent(this,login.class);
+                editor.apply();
+                Intent intent2 = new Intent(this, login.class);
                 this.startActivity(intent2);
                 break;
         }
@@ -120,12 +126,12 @@ public class liste_election extends AppCompatActivity implements NavigationView.
     // ---------------------
 
     // 1 - Configure Toolbar
-    private void configureToolBar(){
+    private void configureToolBar() {
         this.toolbar = findViewById(R.id.toolbar);
     }
 
     // 2 - Configure Drawer Layout
-    private void configureDrawerLayout(){
+    private void configureDrawerLayout() {
         this.drawerLayout = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
@@ -133,7 +139,7 @@ public class liste_election extends AppCompatActivity implements NavigationView.
     }
 
     // 3 - Configure NavigationView
-    private void configureNavigationView(){
+    private void configureNavigationView() {
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }

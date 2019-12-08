@@ -79,7 +79,9 @@ public class list_choix extends AppCompatActivity implements NavigationView.OnNa
                     String id = in.getStringExtra("id");
                     SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
                     String login = pref.getString("login", null);
-                    db.send(id, String.valueOf(rep), login);
+                    HashMap<String, String> map = (HashMap<String, String>) list.getItemAtPosition(rep);
+                    String id1=map.get("id");
+                    db.send(id, id1, login);
                     Intent i = new Intent(getApplicationContext(), fin_elec.class);
                     i.putExtra("id", id);
                     startActivity(i);
@@ -140,6 +142,7 @@ public class list_choix extends AppCompatActivity implements NavigationView.OnNa
                 editor.remove("login");
                 editor.remove("pwd");
                 editor.remove("c");
+                editor.apply();
                 Intent intent2 = new Intent(this, login.class);
                 this.startActivity(intent2);
                 break;

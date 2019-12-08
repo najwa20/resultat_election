@@ -26,22 +26,13 @@ public class fin_elec extends AppCompatActivity implements NavigationView.OnNavi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         db = new datahelper(this);
-        Intent in = getIntent();
-        String i = Objects.requireNonNull(in.getStringExtra("id"));
-
-        if (db.testter(Integer.valueOf(i)).equals("1")) {
-            Intent i1 = new Intent(getApplicationContext(), res_elec.class);
-            i1.putExtra("id", i);
-            startActivity(i1);
-        } else {
-            setContentView(R.layout.conf_page);
-            toolbar = findViewById(R.id.toolbar);
+        setContentView(R.layout.conf_page);
+        toolbar = findViewById(R.id.toolbar);
 
 
-            this.configureDrawerLayout();
+        this.configureDrawerLayout();
 
-            this.configureNavigationView();
-        }
+        this.configureNavigationView();
     }
 
 
@@ -76,6 +67,7 @@ public class fin_elec extends AppCompatActivity implements NavigationView.OnNavi
                 editor.remove("login");
                 editor.remove("pwd");
                 editor.remove("c");
+                editor.apply();
                 Intent intent2 = new Intent(this, login.class);
                 this.startActivity(intent2);
                 break;

@@ -101,6 +101,7 @@ public class list_choix_admin extends AppCompatActivity implements NavigationVie
                 editor.remove("login");
                 editor.remove("pwd");
                 editor.remove("c");
+                editor.apply();
                 Intent intent2 = new Intent(this,login.class);
                 this.startActivity(intent2);
                 break;

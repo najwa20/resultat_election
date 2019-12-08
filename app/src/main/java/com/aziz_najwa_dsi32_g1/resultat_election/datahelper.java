@@ -12,7 +12,7 @@ import java.util.HashMap;
 
 @SuppressWarnings("ALL")
 public class datahelper extends SQLiteOpenHelper {
-    private static final int DATABASE_VERSION = 10;
+    private static final int DATABASE_VERSION = 11;
     private static final String DATABASE_NAME = "election";
 
     datahelper(Context context) {
@@ -175,14 +175,14 @@ public class datahelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         insertnp(login, Integer.valueOf(id));
-
+        db = this.getReadableDatabase();
         String query = "SELECT nb FROM choix where id=" + id1;
         @SuppressLint("Recycle") Cursor cursor = db.rawQuery(query, null);
         int nbr = 0;
         while (cursor.moveToNext()) {
             nbr = cursor.getInt(cursor.getColumnIndex("nb"));
         }
-        nbr = nbr + 1;
+        nbr++;
         db.execSQL("UPDATE choix SET nb =" + nbr + " WHERE id =" + id1);
     }
 
