@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -26,9 +27,9 @@ public class fin_elec extends AppCompatActivity implements NavigationView.OnNavi
         super.onCreate(savedInstanceState);
         db = new datahelper(this);
         Intent in = getIntent();
-        int i = Integer.valueOf(Objects.requireNonNull(in.getStringExtra("id")));
+        String i = Objects.requireNonNull(in.getStringExtra("id"));
 
-        if (db.testter(i)) {
+        if (db.testter(Integer.valueOf(i)).equals("1")) {
             Intent i1 = new Intent(getApplicationContext(), res_elec.class);
             i1.putExtra("id", i);
             startActivity(i1);

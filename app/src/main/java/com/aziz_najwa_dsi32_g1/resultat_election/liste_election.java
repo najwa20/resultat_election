@@ -34,14 +34,14 @@ public class liste_election extends AppCompatActivity implements NavigationView.
         setContentView(R.layout.list_election);
 
         this.configureToolBar();
-
         this.configureDrawerLayout();
-
         this.configureNavigationView();
 
-
-        list = findViewById(R.id.list1);
         db = new datahelper(this);
+
+
+        //remplisage de list
+        list = findViewById(R.id.list1);
         final ArrayList<HashMap<String, String>> listitems = db.getEle();
 
         final SimpleAdapter adapter = new SimpleAdapter(this.getBaseContext(),
@@ -52,6 +52,7 @@ public class liste_election extends AppCompatActivity implements NavigationView.
         );
         list.setAdapter(adapter);
 
+        //go to items
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -72,6 +73,11 @@ public class liste_election extends AppCompatActivity implements NavigationView.
         });
     }
 
+
+
+
+    //Menu
+
     @Override
     public void onBackPressed() {
         // 5 - Handle back click to close menu
@@ -81,7 +87,6 @@ public class liste_election extends AppCompatActivity implements NavigationView.
             super.onBackPressed();
         }
     }
-
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {

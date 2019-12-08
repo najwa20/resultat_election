@@ -8,11 +8,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Objects;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 @SuppressWarnings("ALL")
-public class ajouter_choix extends AppCompatActivity {
+public class ajouter_choix extends AppCompatActivity{
     EditText e1;
     Button btn;
     datahelper db;
@@ -22,6 +21,7 @@ public class ajouter_choix extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ajout_choix);
+
         db = new datahelper(this);
         e1 = findViewById(R.id.nom_choix);
         btn = findViewById(R.id.id_cree_choix);

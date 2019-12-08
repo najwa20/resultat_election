@@ -6,11 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 @SuppressWarnings("ALL")
-public class ajouter_election extends AppCompatActivity {
+public class ajouter_election extends AppCompatActivity{
     EditText e1;
     Button btn;
     datahelper db;
@@ -19,6 +18,7 @@ public class ajouter_election extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ajouter_elec);
+
         db = new datahelper(this);
         e1 = findViewById(R.id.nom_elec);
         btn = findViewById(R.id.id_cree_ele);
@@ -36,4 +36,5 @@ public class ajouter_election extends AppCompatActivity {
             }
         });
     }
+
 }

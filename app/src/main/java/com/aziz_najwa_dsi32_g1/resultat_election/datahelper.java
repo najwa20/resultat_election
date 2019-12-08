@@ -19,6 +19,7 @@ public class datahelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    //creation
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table user (cin text, nom text,prenom text,email text,login text primary key,password text)");
         db.execSQL("create table election (id integer Primary Key AUTOINCREMENT,nom text,terminer integer)");
@@ -26,6 +27,8 @@ public class datahelper extends SQLiteOpenHelper {
         db.execSQL("create table per (login text,election integer)");
     }
 
+
+    //updata base
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // This database is only a cache for online data, so its upgrade policy is
         // to simply to discard the data and start over
@@ -36,6 +39,8 @@ public class datahelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+
+    //insertion table
     void insertuser(String cin, String nom, String prenom, String email, String login, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -76,6 +81,8 @@ public class datahelper extends SQLiteOpenHelper {
         db.insert("per", null, contentValues);
     }
 
+
+    //test
     boolean chekemail(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         @SuppressLint("Recycle") Cursor cursor = db.rawQuery("select * from user where email=?", new String[]{email});
@@ -95,6 +102,8 @@ public class datahelper extends SQLiteOpenHelper {
 
     }
 
+
+    //get item
     ArrayList<HashMap<String, String>> getEle() {
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<HashMap<String, String>> userList = new ArrayList<>();
@@ -141,23 +150,27 @@ public class datahelper extends SQLiteOpenHelper {
         return userList;
     }
 
+    //delete election
     void deletelect(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete("election", "id = ?", new String[]{id});
         db.close();
     }
 
+    //arreter election
     void arrelect(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
         db.execSQL("UPDATE election SET terminer =1 WHERE id =" + id);
     }
 
+    //delete choix
     void deletchoix(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete("choix", "id = ?", new String[]{id});
         db.close();
     }
 
+    //confirmation de choix
     public void send(String id, String id1, String login) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -173,6 +186,8 @@ public class datahelper extends SQLiteOpenHelper {
         db.execSQL("UPDATE choix SET nb =" + nbr + " WHERE id =" + id1);
     }
 
+
+    //test choix
     public boolean testelec(String id, String login) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM per where login='" + login + "' and election=" + id;
@@ -183,16 +198,14 @@ public class datahelper extends SQLiteOpenHelper {
         return false;
     }
 
-    public boolean testter(int id) {
+    public String testter(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String test = "0";
+        String ch="";
         String query = "SELECT terminer FROM election where id=" + id;
         @SuppressLint("Recycle") Cursor cursor = db.rawQuery(query, null);
         while (cursor.moveToNext()) {
-            test = String.valueOf(cursor.getInt(cursor.getColumnIndex("terminer")));
+            ch =String.valueOf(cursor.getInt(cursor.getColumnIndex("terminer")));
         }
-        if (test == "1") {
-            return true;
-        } else return false;
+        return ch;
     }
 }
